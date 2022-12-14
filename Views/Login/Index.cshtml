@@ -1,0 +1,384 @@
+﻿@model IEnumerable<AdoptPetProject.Models.Category>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<section class="slider-holder">
+    <div class="container">
+        <div class="flexslider carousel">
+            <ul class="slides">
+                <li>
+                    <img src="images/samples/slide1.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/samples/slide2.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/samples/slide3.jpg" alt="">
+                </li>
+            </ul>
+
+            <!--						<div class="search-box">-->
+            <!--							<h2>Find an Awesome PetSitter Near You</h2>-->
+            <!--							<form action="#" method="POST" role="form">-->
+            <!--								<div class="form-group">-->
+            <!--									<input type="text" class="form-control" placeholder="All Pet Sitters">-->
+            <!--								</div>-->
+            <!--								<div class="form-group">-->
+            <!--									<input type="text" class="form-control" placeholder="Any Location">-->
+            <!--								</div>-->
+            <!--								<div class="form-group">-->
+            <!--									<div class="select-style">-->
+            <!--										<select class="form-control">-->
+            <!--											<option>Service Type</option>-->
+            <!--											<option>Pet Sitter</option>-->
+            <!--											<option>Dog Sitter</option>-->
+            <!--											<option>Cat Sitter</option>-->
+            <!--										</select>-->
+            <!--									</div>-->
+            <!--								</div>-->
+            <!--								<button type="submit" class="btn btn-success">Search</button>-->
+            <!--							</form>-->
+            <!--						</div>-->
+        </div>
+    </div>
+</section>
+<!-- Slider / End -->
+<!-- Page Content -->
+<section class="page-content">
+    <div class="container">
+
+        <!-- Light Section -->
+        <section class="section-light section-nomargin">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="with-subtitle" data-animation="fadeInUp" data-animation-delay="0">Popüler İlanlar <small data-animation="fadeInUp" data-animation-delay="100">En sevilen ilanlar</small></h2>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-3 col-md-3" data-animation="fadeInLeft" data-animation-delay="0">
+                            <div class="job-listing-box">
+                                <figure class="job-listing-img">
+                                    <a href="job-profile.html"><img src="images/samples/profile1.jpg" alt=""></a>
+                                </figure>
+                                <div class="job-listing-body">
+                                    <h4 class="name"><a href="job-profile.html">Samantha Doe</a></h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                                <footer class="job-listing-footer">
+                                    <ul class="meta">
+                                        <li class="category">Cat Sitter</li>
+                                        <li class="location"><a href="#">Orlando, FL</a></li>
+                                        <li class="date">Posted 1 day ago</li>
+                                    </ul>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3" data-animation="fadeInLeft" data-animation-delay="200">
+                            <div class="job-listing-box">
+                                <figure class="job-listing-img">
+                                    <a href="job-profile.html"><img src="images/samples/profile2.jpg" alt=""></a>
+                                </figure>
+                                <div class="job-listing-body">
+                                    <h4 class="name"><a href="job-profile.html">Molly Warren</a></h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                                <footer class="job-listing-footer">
+                                    <ul class="meta">
+                                        <li class="category">Dog Sitter</li>
+                                        <li class="location"><a href="#">Orlando, FL</a></li>
+                                        <li class="date">Posted 2 days ago</li>
+                                    </ul>
+                                </footer>
+                            </div>
+                        </div>
+
+                        <div class="clearfix visible-xs"></div>
+                        <div class="spacer visible-xs"></div>
+
+                        <div class="col-xs-6 col-sm-3 col-md-3" data-animation="fadeInLeft" data-animation-delay="400">
+                            <div class="job-listing-box">
+                                <figure class="job-listing-img">
+                                    <a href="job-profile.html"><img src="images/samples/profile3.jpg" alt=""></a>
+                                </figure>
+                                <div class="job-listing-body">
+                                    <h4 class="name"><a href="job-profile.html">Jeff Black</a></h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                                <footer class="job-listing-footer">
+                                    <ul class="meta">
+                                        <li class="category">Pet Sitter</li>
+                                        <li class="location"><a href="#">Orlando, FL</a></li>
+                                        <li class="date">Posted 3 days ago</li>
+                                    </ul>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3" data-animation="fadeInLeft" data-animation-delay="600">
+                            <div class="job-listing-box">
+                                <figure class="job-listing-img">
+                                    <a href="job-profile.html"><img src="images/samples/profile4.jpg" alt=""></a>
+                                </figure>
+                                <div class="job-listing-body">
+                                    <h4 class="name"><a href="job-profile.html">Susan Smith</a></h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                                <footer class="job-listing-footer">
+                                    <ul class="meta">
+                                        <li class="category">Cat Sitter</li>
+                                        <li class="location"><a href="#">Orlando, FL</a></li>
+                                        <li class="date">Posted 5 days ago</li>
+                                    </ul>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-animation="fadeInRight" data-animation-delay="0">
+                    <div class="spacer-lg visible-sm visible-xs"></div>
+                    <h2>Sponsorlu İlanlar</h2>
+                    <!-- Featured Listings -->
+                    <div class="owl-carousel owl-theme owl-featured-listings">
+                        <div class="job-listing-box featured">
+                            <figure class="job-listing-img">
+                                <a href="job-profile.html"><img src="images/samples/profile-lg-1.jpg" alt=""></a>
+                            </figure>
+                            <div class="job-listing-holder">
+                                <div class="job-listing-body">
+                                    <h4 class="name"><a href="job-profile.html">John Doe</a></h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                                <footer class="job-listing-footer">
+                                    <ul class="meta">
+                                        <li class="category">Cat Sitter</li>
+                                        <li class="location"><a href="#">Orlando, FL</a></li>
+                                        <li class="date">Posted 5 days ago</li>
+                                    </ul>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="job-listing-box featured">
+                            <figure class="job-listing-img">
+                                <a href="job-profile.html"><img src="images/samples/profile-lg-2.jpg" alt=""></a>
+                            </figure>
+                            <div class="job-listing-holder">
+                                <div class="job-listing-body">
+                                    <h4 class="name"><a href="job-profile.html">John Doe</a></h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                                <footer class="job-listing-footer">
+                                    <ul class="meta">
+                                        <li class="category">Cat Sitter</li>
+                                        <li class="location"><a href="#">Orlando, FL</a></li>
+                                        <li class="date">Posted 5 days ago</li>
+                                    </ul>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="job-listing-box featured">
+                            <figure class="job-listing-img">
+                                <a href="job-profile.html"><img src="images/samples/profile-lg-3.jpg" alt=""></a>
+                            </figure>
+                            <div class="job-listing-holder">
+                                <div class="job-listing-body">
+                                    <h4 class="name"><a href="job-profile.html">John Doe</a></h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                                <footer class="job-listing-footer">
+                                    <ul class="meta">
+                                        <li class="category">Cat Sitter</li>
+                                        <li class="location"><a href="#">Orlando, FL</a></li>
+                                        <li class="date">Posted 5 days ago</li>
+                                    </ul>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Featured Listings / End -->
+
+                </div>
+            </div>
+        </section>
+        <!-- Light Section / End -->
+        <!-- Section -->
+        <section class="section section-nomargin">
+            <div class="row">
+                <div class="col-md-6" data-animation="fadeInLeft" data-animation-delay="0">
+                    <div class="img-box">
+                        <img src="images/samples/img1.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2>Hayvan Sahiplendir</h2>
+                    <div class="icon-box circled icon-box-animated" data-animation="fadeInLeft" data-animation-delay="0">
+                        <div class="icon">
+                            <i class="entypo search"></i>
+                        </div>
+                        <div class="icon-box-body">
+                            <h4>Kayıt Ol / Giriş Yap</h4>
+                            İlan eklemek için giriş yapmak gerekli. Hesabın yok ise hemen bir hesap oluştur ve hayvanını sahiplendir.
+                        </div>
+                    </div>
+
+                    <div class="icon-box circled icon-box-animated" data-animation="fadeInLeft" data-animation-delay="200">
+                        <div class="icon">
+                            <i class="entypo vcard"></i>
+                        </div>
+                        <div class="icon-box-body">
+                            <h4>Bilgileri Doldur</h4>
+                            Sevgili dostunun tüm bilgilerini gir.
+                        </div>
+                    </div>
+
+                    <div class="icon-box circled icon-box-animated" data-animation="fadeInLeft" data-animation-delay="400">
+                        <div class="icon">
+                            <i class="entypo check"></i>
+                        </div>
+                        <div class="icon-box-body">
+                            <h4>Başarılı!</h4>
+                            <p>Artık sevimli dostunun yeni bir dostu var. Amacımıza ulaştık ❤️ </p>
+                        </div>
+                    </div>
+
+                    <a href="job-list.html" class="btn btn-primary">İlan Ekle <i class="fa fa-arrow-circle-o-right fa-lg fa-right"></i></a>
+
+                </div>
+            </div>
+
+            <!--						<hr class="lg">-->
+            <!--						<div class="row">-->
+            <!--							<div class="col-md-6 col-md-push-6" data-animation="fadeInRight" data-animation-delay="0">-->
+            <!--								<div class="img-box">-->
+            <!--									<img src="images/samples/img2.png" alt="">-->
+            <!--								</div>-->
+            <!--							</div>-->
+            <!--							<div class="col-md-6 col-md-pull-6">-->
+            <!--								<h2>For Pet Sitters</h2>-->
+            <!--								<div class="icon-box circled icon-box-animated" data-animation="fadeInRight" data-animation-delay="0">-->
+            <!--									<div class="icon">-->
+            <!--										<i class="entypo pencil"></i>-->
+            <!--									</div>-->
+            <!--									<div class="icon-box-body">-->
+            <!--										<h4>Create a Free Profile</h4>-->
+            <!--										Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.-->
+            <!--									</div>-->
+            <!--								</div>-->
+            <!--								<div class="icon-box circled icon-box-animated" data-animation="fadeInRight" data-animation-delay="200">-->
+            <!--									<div class="icon">-->
+            <!--										<i class="entypo calendar"></i>-->
+            <!--									</div>-->
+            <!--									<div class="icon-box-body">-->
+            <!--										<h4>Set Your Schedule</h4>-->
+            <!--										Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.-->
+            <!--									</div>-->
+            <!--								</div>-->
+            <!--								<div class="icon-box circled icon-box-animated" data-animation="fadeInRight" data-animation-delay="400">-->
+            <!--									<div class="icon">-->
+            <!--										<i class="entypo star"></i>-->
+            <!--									</div>-->
+            <!--									<div class="icon-box-body">-->
+            <!--										<h4>Become a Star</h4>-->
+            <!--										<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</p>-->
+            <!--									</div>-->
+            <!--								</div>-->
+            <!--								<a href="job-post-profile.html" class="btn btn-primary">Start Here <i class="fa fa-arrow-circle-o-right fa-lg fa-right"></i></a>-->
+            <!--							</div>-->
+            <!--						</div>-->
+
+        </section>
+        <!-- Section / End -->
+        <!-- Light Section -->
+        <section class="section-light section-nomargin">
+            <div class="title-bordered" data-animation="fadeInUp" data-animation-delay="0">
+                <h2>Neden Biz? <small>Adopt Pet INC</small></h2>
+            </div>
+            <div class="row">
+                <div class="col-md-3" data-animation="fadeInDown" data-animation-delay="0">
+                    <div class="icon-box filled centered lg circled icon-box-animated-inverse">
+                        <div class="icon">
+                            <i class="entypo chat"></i>
+                        </div>
+                        <div class="icon-box-body">
+                            <h3>Hızlı İletişim</h3>
+                            <p>Ulaşmak istediğin kişiye aracı olmadan anında ulaş.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-animation="fadeInDown" data-animation-delay="200">
+                    <div class="icon-box filled centered lg circled icon-box-animated-inverse">
+                        <div class="icon">
+                            <i class="entypo heart"></i>
+                        </div>
+                        <div class="icon-box-body">
+                            <h3>Kullanım Kolaylığı</h3>
+                            <p>Sadece 5 dakika harcayarak hayvanına yeni bir dost bul.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-animation="fadeInDown" data-animation-delay="400">
+                    <div class="icon-box filled centered lg circled icon-box-animated-inverse">
+                        <div class="icon">
+                            <i class="entypo light-bulb"></i>
+                        </div>
+                        <div class="icon-box-body">
+                            <h3>Günlük Bilgiler</h3>
+                            <p>Dostunu en iyi şekilde nasıl besleyebileceğin hakkında bilgileri günlük paylaşıyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="icon-box filled centered lg circled icon-box-animated-inverse" data-animation="fadeInDown" data-animation-delay="600">
+                        <div class="icon">
+                            <i class="entypo thumbs-up"></i>
+                        </div>
+                        <div class="icon-box-body">
+                            <h3>Memnuniyet</h3>
+                            <p>Sahiplendirdiğiniz hayvanların sahiplerinden 99% olumlu dönüşler alıyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Light Section / End -->
+        <!-- Section -->
+        <section class="section section-nomargin">
+            <div class="title-bordered" data-animation="fadeInUp" data-animation-delay="0">
+                <h2>Kullanıcılarımız Ne Dedi? <small>Son Yorumlar</small></h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6" data-animation="fadeInLeft" data-animation-delay="0">
+                    <div class="testimonial">
+                        <blockquote>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut laoreet mi. Integer vitae elit quis leo tincidunt euismod. Nullam blandit vestibulum lectus sed sollicitudin. </p>
+                        </blockquote>
+                        <div class="bq-author">
+                            <figure class="author-img">
+                                <img src="images/samples/testi-img1.png" alt="">
+                            </figure>
+                            <h6>John Doe</h6>
+                            <span class="bq-author-info">CEO, Compay Name</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-animation="fadeInRight" data-animation-delay="0">
+                    <div class="spacer-lg visible-sm visible-xs"></div>
+                    <div class="testimonial">
+                        <blockquote>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut laoreet mi. Integer vitae elit quis leo tincidunt euismod. Nullam blandit vestibulum lectus sed sollicitudin. </p>
+                        </blockquote>
+                        <div class="bq-author">
+                            <figure class="author-img">
+                                <img src="images/samples/testi-img2.png" alt="">
+                            </figure>
+                            <h6>Samantha White</h6>
+                            <span class="bq-author-info">Manager, Compay Name</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section / End -->
+
+    </div>
+</section>
