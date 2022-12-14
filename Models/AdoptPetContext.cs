@@ -13,6 +13,10 @@ namespace AdoptPetProject.Models
         //}
 
         public DbSet<Category> Categories { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Pet> Pets { get; set; }
+        public DbSet<Admin> Admins { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
