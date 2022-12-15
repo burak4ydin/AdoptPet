@@ -48,7 +48,7 @@ namespace AdoptPetProject.Controllers
 
         //POST Register
         [HttpPost]
-        public IActionResult Index(string username, string password,string again)
+        public IActionResult Index(string username, string password,string again,string phone, string name)
         {
 
             ViewData["username"] = username;
@@ -71,7 +71,9 @@ namespace AdoptPetProject.Controllers
                 User user = new User
                 {
                     username = username,
-                    password = MD5Hash.Hash.Content(password)
+                    password = MD5Hash.Hash.Content(password),
+                    name=name,
+                    phone=phone
                 };
 
                 context.Users.Add(user);
@@ -90,6 +92,8 @@ namespace AdoptPetProject.Controllers
                     {
                         ViewData["loginOK"] = "ok";
                         session.HttpContext.Session.SetString("token", "kn12m3121d1mlk1m2");
+                        session.HttpContext.Session.SetString("userID", exists.id.ToString());
+
                         return RedirectToAction("Index", "Home");
                     }
                     else

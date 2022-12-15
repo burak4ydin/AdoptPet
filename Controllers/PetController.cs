@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using AdoptPetProject.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting.Internal;
 
@@ -59,21 +60,22 @@ namespace AdoptPetProject.Controllers
                     province = location,
                     catId = catId,
                     description=description,
-                    photoLink=s,
-                    age=age
+                    photoLink= "data:image/jpeg;base64, " + s,
+                    age=age,
+                    userId = Int32.Parse(session.HttpContext.Session.GetString("userID"))
                 };
 
-                //context.Pets.Add(pet);
-                //context.SaveChanges();
+                context.Pets.Add(pet);
+                context.SaveChanges();
                 ViewData["added"] = "ok";
                 session.HttpContext.Session.SetString("token", "n1kl2ml21njk1n2jk1");
 
                 // act on the Base64 data
             }
+            var categories = context.Categories.ToList();
 
 
-
-            return View();
+            return View(categories);
         }
 
     }

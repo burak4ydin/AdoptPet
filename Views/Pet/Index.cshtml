@@ -1,15 +1,16 @@
 ﻿@model IEnumerable<AdoptPetProject.Models.Category>
+@inject IHttpContextAccessor Accessor
 
 @{
-    
+
 }
 
 <section class="page-content">
     <div class="container">
-        
+
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-               
+
                 <!-- Job Form -->
                 <form asp-controller="Pet" asp-action="Index" method="post" id="submit-job-form" class="job-manager-form" enctype="multipart/form-data">
                     @{
@@ -30,8 +31,8 @@
                         }
                     }
                     @{
-                        
-                        if (Context.Session.GetString("token") != "")
+
+                        if (Accessor.HttpContext.Session.GetString("token").Length>0)
                         {
                             <fieldset class="fieldset-job_title">
                                 <label for="job_title">İlan Başlığı</label>
@@ -60,10 +61,10 @@
                                         <div class="field select-style">
                                             <select name="catId" id="job_type" class="form-control">
                                                 @*<option value="unspecified">Unspecified</option>
-                                    <option value="pet-sitter">Pet Sitter</option>
-                                    <option value="dog-sitter">Dog Sitter</option>
-                                    <option value="cat-sitter">Cat Sitter</option>
-                                    <option value="dog-walker">Dog Walker</option>*@
+                                                    <option value="pet-sitter">Pet Sitter</option>
+                                                    <option value="dog-sitter">Dog Sitter</option>
+                                                    <option value="cat-sitter">Cat Sitter</option>
+                                                    <option value="dog-walker">Dog Walker</option>*@
                                                 @foreach (var i in Model)
                                                 {
                                                     <option value="@i.id">@i.catName</option>

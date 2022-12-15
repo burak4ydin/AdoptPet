@@ -55,10 +55,18 @@ public class HomeController : Controller
         //context.SaveChanges();
 
         var filtre = context.Categories.Where(u => u.id >= 1 && u.id <= 2).ToList();
-        var categories = context.Categories.ToList();
+        var pets = context.Pets.ToList();
+        var catList = context.Categories.ToList();
+        var users = context.Users.ToList();
+        var model = new ViewModel();
+        ViewModel mymodel = new ViewModel();
+        ViewData["Pets"] = pets;
+        ViewData["Categories"] = catList;
+        ViewData["Users"] = users;
 
 
-        return View(filtre);
+
+        return View();
     }
 
     public IActionResult Privacy()

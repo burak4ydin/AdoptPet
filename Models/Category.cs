@@ -8,6 +8,7 @@ namespace AdoptPetProject.Models
         [Key]
         public int id { get; set; }
         public string catName { get; set; }
+        public DateTime createdAt { get; set; } = DateTime.Now;
     }
 }
 
