@@ -13,9 +13,15 @@ namespace AdoptPetProject.Controllers
     {
         private const bool V = true;
 
-       
+        private readonly IHttpContextAccessor session;
 
+        AdoptPetContext context = new AdoptPetContext();
+        
+            public LoginController(IHttpContextAccessor httpContextAccessor)
+            {
+                session = httpContextAccessor;
 
+            }
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -24,21 +30,32 @@ namespace AdoptPetProject.Controllers
             ViewData["password"] = "boş";
             ViewData["registerOK"] = "boş";
 
+
+            //if (TempData["loginOK"] == "ok")
+            //{
+            //    ViewData["loginOK"] = "ok";
+            //}
+            //else if(TempData["loginOK"] == "error")
+            //{
+            //    ViewData["loginOK"] = "error";
+            //    ViewData["loginError"] = "Hata";
+
+            //}
+
             return View();
         }
 
 
         //POST Register
         [HttpPost]
-        public IActionResult Index(string username, string password)
+        public IActionResult Index(string username, string password,string again)
         {
 
             ViewData["username"] = username;
-            ViewData["password"] = password;
+            ViewData["password"] = MD5Hash.Hash.Content(password);
 
-
-        AdoptPetContext context = new AdoptPetContext();
-
+            if(again != null)
+            {
 
             User exists = context.Users.FirstOrDefault(u => u.username == username);
 
@@ -51,12 +68,69 @@ namespace AdoptPetProject.Controllers
             {
                 ViewData["registerOK"] = "ok";
 
+                User user = new User
+                {
+                    username = username,
+                    password = MD5Hash.Hash.Content(password)
+                };
+
+                context.Users.Add(user);
+                context.SaveChanges();
+
             }
+
+            }
+            else
+            {
+                User exists = context.Users.FirstOrDefault(u => u.username == username);
+
+                if (exists != null)
+                {
+                    if (exists.password == MD5Hash.Hash.Content(password))
+                    {
+                        ViewData["loginOK"] = "ok";
+                        session.HttpContext.Session.SetString("token", "kn12m3121d1mlk1m2");
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        ViewData["loginOK"] = "error";
+
+                        ViewData["loginError"] = "Parola Hatalı";
+                    }
+                }
+                else
+                {
+                    ViewData["loginOK"] = "error";
+                    ViewData["loginError"] = "Kullanıcı Bulunamadı";
+                }
+            }
+
 
 
 
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Login(string username,string password)
+        {
+
+
+            
+
+            return RedirectToAction("Index");
+
+            
+        }
+
+        public IActionResult Logout(string val)
+        {
+            session.HttpContext.Session.Remove("token");
+            return RedirectToAction("Index", "Home");
+        }
+
+
     }
 }
 

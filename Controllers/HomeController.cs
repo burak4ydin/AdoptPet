@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using AdoptPetProject.Models;
+using Microsoft.AspNetCore.Session;
+using System.Drawing;
 
 namespace AdoptPetProject.Controllers;
 
@@ -8,15 +10,21 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    private readonly IHttpContextAccessor session;
+    public HomeController(ILogger<HomeController> logger, IHttpContextAccessor httpContextAccessor)
     {
         _logger = logger;
+        session = httpContextAccessor;
     }
 
     public IActionResult Index()
     {
+
+        session.HttpContext.Session.SetString("Name","Burak");
+
         
         AdoptPetContext context = new AdoptPetContext();
+
         //Category category = new()
         //{
         //    catName= "Kedi"

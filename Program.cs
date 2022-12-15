@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Reflection.Metadata;
 using AdoptPetProject.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 internal class Program
 {
@@ -46,8 +47,14 @@ internal class Program
         {
             Console.WriteLine(e.ToString());
         }
+        builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-        
+        builder.Services.AddDistributedMemoryCache();
+        builder.Services.AddSession(options =>
+        {
+            options.IdleTimeout = TimeSpan.FromSeconds(10);
+           
+        });
         // Add services to the container.
         builder.Services.AddControllersWithViews();
 
@@ -67,6 +74,7 @@ internal class Program
         app.UseRouting();
 
         app.UseAuthorization();
+        app.UseSession();
 
         app.MapControllerRoute(
             name: "default",

@@ -15,6 +15,11 @@
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
     <None Remove="Views\Login\" />
+    <None Remove="MD5" />
+    <None Remove="Blazored.SessionStorage" />
+    <None Remove="Microsoft.AspNetCore.Session" />
+    <None Remove="JWT" />
+    <None Remove="Microsoft.AspNetCore.Http" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
@@ -30,6 +35,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="MD5" Version="2.0.2" />
+    <PackageReference Include="Blazored.SessionStorage" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="JWT" Version="9.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Login\" />

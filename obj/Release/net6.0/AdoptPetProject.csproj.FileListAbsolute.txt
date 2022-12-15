@@ -88,3 +88,7 @@
 /Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/obj/Release/net6.0/AdoptPetProject.pdb
 /Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/obj/Release/net6.0/AdoptPetProject.genruntimeconfig.cache
 /Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/obj/Release/net6.0/ref/AdoptPetProject.dll
+/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/bin/Release/net6.0/MD5.dll
+/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/bin/Release/net6.0/Blazored.SessionStorage.dll
+/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/bin/Release/net6.0/JWT.dll
+/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/bin/Release/net6.0/Newtonsoft.Json.dll
