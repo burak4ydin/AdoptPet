@@ -20,6 +20,8 @@
     <None Remove="Microsoft.AspNetCore.Session" />
     <None Remove="JWT" />
     <None Remove="Microsoft.AspNetCore.Http" />
+    <None Remove="Views\Pet\" />
+    <None Remove="System.Net.Requests" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
@@ -40,8 +42,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="JWT" Version="9.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="System.Net.Requests" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Login\" />
+    <Folder Include="Views\Pet\" />
   </ItemGroup>
 </Project>

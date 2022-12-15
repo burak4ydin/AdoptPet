@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5D6yTaJknHN6l4xE5mSRMs40Zm1dyzvU3kzibqigeuM=",
+  "Hash": "KDknljOSE/Z/nxQdKkXql9+Ov+ogYOpy6Qm2nojCPHs=",
   "Source": "AdoptPetProject",
   "BasePath": "_content/AdoptPetProject",
   "Mode": "Default",
@@ -1834,6 +1834,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/site.js"
+    },
+    {
+      "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/lib/.DS_Store",
+      "SourceId": "AdoptPetProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/",
+      "BasePath": "_content/AdoptPetProject",
+      "RelativePath": "lib/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/lib/.DS_Store"
     },
     {
       "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",

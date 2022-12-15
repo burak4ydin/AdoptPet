@@ -40,9 +40,9 @@ public class HomeController : Controller
         //context.Categories.AddRange(category,category1,category2);
         //context.SaveChanges();
 
-        Category category3 = context.Categories.FirstOrDefault(u => u.id == 1);
-        category3.catName = "Sürüngen";
-        context.SaveChanges();
+        //Category category3 = context.Categories.FirstOrDefault(u => u.id == 1);
+        //category3.catName = "Sürüngen";
+        //context.SaveChanges();
 
         //Category cat1 = new()
         //{

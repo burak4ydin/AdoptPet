@@ -1,0 +1,154 @@
+﻿@model IEnumerable<AdoptPetProject.Models.Category>
+
+@{
+    
+}
+
+<section class="page-content">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+               
+                <!-- Job Form -->
+                <form asp-controller="Pet" asp-action="Index" method="post" id="submit-job-form" class="job-manager-form" enctype="multipart/form-data">
+                    @{
+
+                        if (ViewData["added"] == "ok")
+                        {
+
+
+                            <div class="alert alert-success" id="newsletter-alert-success">
+                                <strong>Başarılı!</strong> İlanınız eklendi, anasayfaya yönlendiriliyorsunuz...
+                            </div>
+                        }
+                        else if (ViewData["added"] == "error")
+                        {
+                            <div class="alert alert-danger" id="newsletter-alert-error">
+                                <strong>Hata!</strong> @ViewData["addedError"]
+                            </div>
+                        }
+                    }
+                    @{
+                        
+                        if (Context.Session.GetString("token") != "")
+                        {
+                            <fieldset class="fieldset-job_title">
+                                <label for="job_title">İlan Başlığı</label>
+                                <div class="field">
+                                    <input type="text" class="form-control" name="name" id="job_title" placeholder="Dogo Argentino Köpeğimizi Sahiplendirecegiz" value="" />
+                                </div>
+                            </fieldset>
+                            <fieldset class="fieldset-job_title">
+                                <label for="job_title">Yaş</label>
+                                <div class="field">
+                                    <input type="text" class="form-control" name="age" id="job_title" placeholder="3" value="" />
+                                </div>
+                            </fieldset>
+                            <fieldset class="fieldset-job_location">
+                                <label for="job_location">Lokasyon <small>(optional)</small></label>
+                                <div class="field">
+                                    <input type="text" class="form-control" name="location" id="job_location" placeholder="e.g. &quot;Istanbul&quot;, &quot;Ankara&quot;, &quot;İzmir&quot;" value="" />
+                                    <small class="description">Leave this blank if the job can be done from anywhere (i.e. telecommuting)</small>
+                                </div>
+                            </fieldset>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <fieldset class="fieldset-job_type">
+                                        <label for="job_type">Kategori</label>
+                                        <div class="field select-style">
+                                            <select name="catId" id="job_type" class="form-control">
+                                                @*<option value="unspecified">Unspecified</option>
+                                    <option value="pet-sitter">Pet Sitter</option>
+                                    <option value="dog-sitter">Dog Sitter</option>
+                                    <option value="cat-sitter">Cat Sitter</option>
+                                    <option value="dog-walker">Dog Walker</option>*@
+                                                @foreach (var i in Model)
+                                                {
+                                                    <option value="@i.id">@i.catName</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <!--									<div class="col-md-6">-->
+                                <!--										<fieldset class="fieldset-job_category">-->
+                                <!--											<label for="job_category">Job category</label>-->
+                                <!--											<div class="field select-style">-->
+                                <!--												<select name="job_category" id="job_category" class="form-control">-->
+                                <!--													<option value="unspecified">Unspecified</option>-->
+                                <!--													<option value="pet-feeding">Pet Feeding</option>-->
+                                <!--													<option value="cat-feeding">Cat Feeding</option>-->
+                                <!--												</select>-->
+                                <!--											</div>-->
+                                <!--										</fieldset>-->
+                                <!--									</div>-->
+                            </div>
+
+                            <fieldset class="fieldset-job_description">
+                                <label>Açıklama</label>
+                                <div class="field">
+                                    <textarea name="description" cols="30" rows="8" class="form-control"></textarea>
+                                </div>
+                            </fieldset>
+
+                            <!--								<fieldset class="fieldset-application">-->
+                            <!--									<label for="application">Application email/URL</label>-->
+                            <!--									<div class="field">-->
+                            <!--										<input type="text" class="form-control" name="application" id="application" placeholder="Enter an email address or website URL" value="" />-->
+                            <!--									</div>-->
+                            <!--								</fieldset>-->
+
+                            <fieldset class="fieldset-company_logo">
+                                <label for="company_logo">Fotoğraf <small>(optional)</small></label>
+                                <div class="field">
+                                    <input type="file" class="form-control" name="image" />
+                                    <small class="description">
+                                        Max. dosya boyutu: 32 MB.
+                                    </small>
+                                </div>
+                            </fieldset>
+
+                            <div class="spacer"></div>
+
+                            <p>
+                                <input type="submit" name="submit_job" class="btn btn-primary" value="İlanı Oluştur  &rarr;" />
+                            </p>
+                        }
+                        else
+                        {
+                            <fieldset>
+                                <label>Hesabınız var mı?</label>
+                                <div class="field account-sign-in">
+                                    <p>
+                                        <a class="btn btn-primary btn-sm" asp-controller="Login" asp-action="Index"><i class="fa fa-key"></i> Giriş Yap</a>
+                                    </p>
+
+                                    <!--										<div class="alert alert-info alert-dismissable">-->
+                                    <!--											<button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>-->
+                                    <!--											If you don‘t have an account you can create one below by entering your email address. A password will be  automatically emailed to you.-->
+                                    <!--										</div>-->
+                                </div>
+                            </fieldset>
+                        }
+                    }
+
+
+                    <!--								<fieldset>-->
+                    <!--									<label>Your Email <span class="required">*</span></label>-->
+                    <!--									<div class="field">-->
+                    <!--										<input type="email" class="form-control" name="create_account_email" id="account_email" placeholder="you@yourdomain.com" value="" />-->
+                    <!--									</div>-->
+                    <!--								</fieldset>-->
+                    <!-- Job Information Fields -->
+
+
+                </form>
+                <!-- Job Form / End -->
+            </div>
+        </div>
+
+    </div>
+</section>
+

@@ -7,7 +7,7 @@ namespace AdoptPetProject.Models
     {
         [Key]
         public int id { get; set; }
-        public Category catId { get; set; }
+        public int catId { get; set; }
         public string name { get; set; }
         public int age { get; set; }
         public string province { get; set; }

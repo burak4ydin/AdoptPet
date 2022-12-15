@@ -161,10 +161,10 @@
         <nav class="nav-main">
             <div class="container">
                 <ul data-breakpoint="992" class="flexnav">
-                    <li class="active"><a href="index.html">Anasayfa</a></li>
-                    <li><a href="page-about.html">Hakkımızda</a></li>
-                    <li><a href="job-list.html">Sahiplen</a></li>
-                    <li><a href="job-post-job.html">Sahiplendir</a></li>
+                    <li class="@(ViewData["Active"] == "Home" ? "active" : "")">@Html.ActionLink("Anasayfa", "Index", "Home")</li>
+                    <li class="@(ViewData["Active"] == "About" ? "active" : "")"><a href="page-about.html">Hakkımızda</a></li>
+                    <li class="@(ViewData["Active"] == "List" ? "active" : "")"><a href="job-list.html">Sahiplen</a></li>
+                    <li class="@(ViewData["Active"] == "Pet" ? "active" : "") "><a href="@Url.Action("Index","Pet")" target="_self">Sahiplendir</a></li>
 
                     <li><a href="contacts.html">İletişim</a></li>
 
