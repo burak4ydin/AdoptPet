@@ -1,0 +1,270 @@
+
+
+@{
+    IEnumerable<Category> categories = ViewData["Categories"] as IEnumerable<Category>;
+    IEnumerable<Pet> pets = ViewData["Pets"] as IEnumerable<Pet>;
+    IEnumerable<User> users = ViewData["Users"] as IEnumerable<User>;
+	var id = ViewData["selectedPet"];
+	var pet = pets.First(e=>e.id==Int32.Parse(id.ToString()));
+}
+
+<!DOCTYPE html>
+<!--[if IE 7]>                  <html class="ie7 no-js" lang="en">     <![endif]-->
+<!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="en">  <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+	================================================== -->
+	<meta charset="utf-8">
+	<title>Profile | PetSitter Responsive HTML5/CSS3 Template</title>
+	<meta name="description" content="PetSitter - Responsive HTML5 Template - 1.0">
+	<meta name="author" content="http://themeforest.net/user/dan_fisher">
+
+
+	<!-- Mobile Specific Metas
+	================================================== -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	
+	<!-- Google Web Fonts
+	================================================== -->
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic%7CBitter:700' rel='stylesheet' type='text/css'>
+	
+	<!-- CSS
+	================================================== -->
+   <!-- Base + Vendors CSS -->
+   <link rel="stylesheet" href="~/css/bootstrap.min.css">
+   <link rel="stylesheet" href="~/css/fonts/font-awesome/css/font-awesome.css">
+   <link rel="stylesheet" href="~/css/fonts/entypo/css/entypo.css">
+   <link rel="stylesheet" href="~/vendor/owl-carousel/owl.carousel.css" media="screen">
+	<link rel="stylesheet" href="~/vendor/owl-carousel/owl.theme.css" media="screen">
+	<link rel="stylesheet" href="~/vendor/magnific-popup/magnific-popup.css" media="screen">
+	<link rel="stylesheet" href="~/vendor/job-manager/frontend.css" media="screen">
+
+   <!-- Theme CSS-->
+   <link rel="stylesheet" href="~/css/theme.css">
+	<link rel="stylesheet" href="~/css/theme-elements.css">
+   <link rel="stylesheet" href="~/css/animate.min.css">
+
+   
+
+   <!-- Head Libs -->
+	<script src="~/vendor/modernizr.js"></script>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="~/vendor/respond.min.js"></script>
+	<![endif]-->
+
+	<!--[if IE]>
+		<link rel="stylesheet" href="~/css/ie.css">
+	<![endif]-->
+	
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="~/images/favicon.ico">
+	<link rel="apple-touch-icon" href="~/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="~/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="~/images/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="~/images/apple-touch-icon-144x144.png">
+	
+</head>
+<body>
+
+	<div class="site-wrapper">
+
+		
+
+
+		<!-- Main -->
+		<div class="main" role="main">
+
+			<!-- Page Heading -->
+			<section class="page-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<h1>Profile</h1>
+						</div>
+						<div class="col-md-6">
+							<ul class="breadcrumb">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="#">Pet Sitters</a></li>
+								<li class="active">Profile</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Page Heading / End -->
+
+			<!-- Page Content -->
+			<section class="page-content">
+				<div class="container">
+
+					<div class="row">
+						<div class="content col-md-8">
+							
+							
+								<div class="job-profile-info">
+									<div class="row">
+										<div class="col-md-5">
+											<figure class="alignnone">
+												<img src="@pet.photoLink" alt="">
+											</figure>
+										</div>
+										<div class="col-md-7">
+											<h2 class="name">@pet.name</h2>
+											<i class="tagline">@users.FirstOrDefault(u => u.id == pet.userId).name</i>
+											<ul class="meta">
+												<li>Yaş: @pet.age</li>
+												<li>@categories.FirstOrDefault(u => u.id == pet.catId).catName</li>
+											</ul>
+											<ul class="info">
+												<li><i class="fa fa-map-marker"></i> @pet.province</li>
+												<li><i class="fa fa-clock-o"></i>@pet.createdAt.ToString("yyyy-MM-dd"); </li>
+											</ul>
+								
+											<div class="spacer-lg"></div>
+								
+											<a href="tel:+9{@users.FirstOrDefault(u => u.id == pet.userId).phone}" class="btn btn-success btn-lg"><span class="fa fa-envelope"></span> Ara</a>
+										</div>
+									</div>
+								
+									<div class="spacer-lg"></div>
+								
+									<h4>Açıklama</h4>
+									<p>@pet.description</p>
+								
+									
+								
+									<hr class="lg">
+								
+									
+									<!-- Google Map / End -->
+								
+									<hr class="lg">
+								
+								
+								</div>
+							
+
+
+						</div>
+
+						<!-- Sidebar -->
+						<aside class="sidebar col-md-3 col-md-offset-1 col-bordered">
+							<hr class="visible-sm visible-xs lg">
+							<!-- Widget :: Recent Jobs -->
+							<div class="widget_recent_jobs widget widget__sidebar">
+								<h3 class="widget-title">Diğer İlanlar</h3>
+								<div class="widget-content">
+									<ul class="job_listings">
+										
+										@foreach (var i in pets)
+										{
+											<li>
+												<a asp-controller="Adopt" asp-action="Info" asp-route-id="@i.id">
+													<div class="position">
+														<h3>@i.name</h3>
+													</div>
+													<ul class="meta">
+														<li class="location">
+															@i.province
+														</li>
+														<li class="company">
+															@users.FirstOrDefault(u => u.id == pet.userId).name
+														</li>
+														<li class="company">
+															@categories.FirstOrDefault(u => u.id == pet.catId).catName
+														</li>
+													</ul>
+												</a>
+											</li>
+										}
+									</ul>
+								</div>
+							</div>
+							<!-- /Widget :: Recent Jobs -->
+						</aside>
+						<!-- Sidebar / End -->
+
+					</div>
+				</div>
+			</section>
+			<!-- Page Content / End -->
+
+			
+			
+		</div>
+		<!-- Main / End -->
+	</div>
+	
+	
+	
+	
+	
+	<!-- Javascript Files
+	================================================== -->
+	<script src="~/vendor/jquery-1.11.0.min.js"></script>
+	<script src="~/vendor/jquery-migrate-1.2.1.min.js"></script>
+	<script src="~/vendor/bootstrap.js"></script>
+	<script src="~/vendor/jquery.flexnav.min.js"></script>
+	<script src="~/vendor/jquery.hoverIntent.minified.js"></script>
+	<script src="~/vendor/jquery.flickrfeed.js"></script>
+	<script src="~/vendor/isotope/jquery.isotope.min.js"></script>
+	<script src="~/vendor/isotope/jquery.isotope.sloppy-masonry.min.js"></script>
+	<script src="~/vendor/isotope/jquery.imagesloaded.min.js"></script>
+	<script src="~/vendor/magnific-popup/jquery.magnific-popup.js"></script>
+	<script src="~/vendor/owl-carousel/owl.carousel.min.js"></script>
+	<script src="~/vendor/jquery.fitvids.js"></script>
+	<script src="~/vendor/jquery.appear.js"></script>
+	<script src="~/vendor/jquery.stellar.min.js"></script>
+
+	<!-- Newsletter Form -->
+	<script src="~/vendor/jquery.validate.js"></script>
+	<script src="~/js/newsletter.js"></script>
+
+	<script src="~/js/custom.js"></script>
+
+	<!-- Google Map -->
+	<script src="https://maps.google.com/maps/api/js?key=AIzaSyCvbFmcDPH7J_9PRlpZUPMd2Y4JBOt8hSc"></script>
+	<script src="~/vendor/jquery.gmap3.min.js"></script>
+	
+	<!-- Google Map Init-->
+	<script type="text/javascript">
+		jQuery(function($){
+			$('#map_canvas').gmap3({
+				marker:{
+					address: '40.717599,-74.005136' 
+				},
+					map:{
+					options:{
+					zoom: 17,
+					scrollwheel: false,
+					streetViewControl : true
+					}
+				}
+		    });
+		});
+	</script>
+
+
+	
+<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-49851325-1', 'dan-fisher.com');
+		ga('send', 'pageview');
+	</script>
+	
+</body>
+</html>
+
+
+
+
+

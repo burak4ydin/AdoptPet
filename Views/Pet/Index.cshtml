@@ -32,7 +32,7 @@
                     }
                     @{
 
-                        if (Accessor.HttpContext.Session.GetString("token").Length>0)
+                        if (Accessor.HttpContext.Session.GetString("token")!=null)
                         {
                             <fieldset class="fieldset-job_title">
                                 <label for="job_title">İlan Başlığı</label>

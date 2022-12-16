@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xE1O9iyAzCOzjm28aJzgCndYYZFU/8fM69HtHfGPuDs=",
+  "Hash": "oQQMg3pnw0L1YRHKALZukvLVHAAe4b6ZLObI1hPaE6s=",
   "Source": "AdoptPetProject",
   "BasePath": "_content/AdoptPetProject",
   "Mode": "Default",
@@ -119,40 +119,6 @@
       "OriginalItemSpec": "wwwroot/css/bootstrap.min.css"
     },
     {
-      "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/css/fonts/.DS_Store",
-      "SourceId": "AdoptPetProject",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/",
-      "BasePath": "_content/AdoptPetProject",
-      "RelativePath": "css/fonts/.DS_Store",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/fonts/.DS_Store"
-    },
-    {
-      "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/css/fonts/entypo/.DS_Store",
-      "SourceId": "AdoptPetProject",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/",
-      "BasePath": "_content/AdoptPetProject",
-      "RelativePath": "css/fonts/entypo/.DS_Store",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/fonts/entypo/.DS_Store"
-    },
-    {
       "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/css/fonts/entypo/css/entypo.css",
       "SourceId": "AdoptPetProject",
       "SourceType": "Discovered",
@@ -236,23 +202,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/fonts/entypo/fonts/entypo﹖20235284.woff"
-    },
-    {
-      "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/css/fonts/font-awesome/.DS_Store",
-      "SourceId": "AdoptPetProject",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/",
-      "BasePath": "_content/AdoptPetProject",
-      "RelativePath": "css/fonts/font-awesome/.DS_Store",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/fonts/font-awesome/.DS_Store"
     },
     {
       "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/css/fonts/font-awesome/css/font-awesome.css",
@@ -391,6 +340,23 @@
       "OriginalItemSpec": "wwwroot/css/site.css"
     },
     {
+      "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/css/style.css",
+      "SourceId": "AdoptPetProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/",
+      "BasePath": "_content/AdoptPetProject",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/style.css"
+    },
+    {
       "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/css/theme-elements.css",
       "SourceId": "AdoptPetProject",
       "SourceType": "Discovered",
@@ -440,6 +406,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/images/.DS_Store",
+      "SourceId": "AdoptPetProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/",
+      "BasePath": "_content/AdoptPetProject",
+      "RelativePath": "images/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/.DS_Store"
     },
     {
       "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/images/apple-touch-icon-114x114.png",
@@ -1817,23 +1800,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/newsletter.js"
-    },
-    {
-      "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/js/site.js",
-      "SourceId": "AdoptPetProject",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/",
-      "BasePath": "_content/AdoptPetProject",
-      "RelativePath": "js/site.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/site.js"
     },
     {
       "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/lib/.DS_Store",
