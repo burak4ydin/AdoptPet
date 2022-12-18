@@ -22,6 +22,7 @@
     <None Remove="Microsoft.AspNetCore.Http" />
     <None Remove="Views\Pet\" />
     <None Remove="System.Net.Requests" />
+    <None Remove="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
@@ -47,5 +48,31 @@
   <ItemGroup>
     <Folder Include="Views\Login\" />
     <Folder Include="Views\Pet\" />
+    <Folder Include="Resources\" />
+    <Folder Include="wwwroot\images\flags" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Resources\SharedResource.en-us.resx" />
+    <EmbeddedResource Remove="Resources\SharedResource.tr-tr.resx" />
+    <EmbeddedResource Include="Resources\SharedResource.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedResource.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SharedResource.tr-TR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedResource.tr-TR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\SharedResource.tr-TR.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SharedResource.tr-TR.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\SharedResource.en-US.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SharedResource.en-US.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

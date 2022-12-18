@@ -1,7 +1,8 @@
 ﻿
-
+@inject LanguageService language
 @{
     
+    var dil = System.Threading.Thread.CurrentThread.CurrentCulture;
 
 }
 
@@ -84,7 +85,7 @@
                             </button>
                             <div class="menu-container">
                                 <ul class="header-top-nav header-top-nav__tertiary">
-                                    <li><a asp-controller="Login" asp-action="Logout"><i class="fa-lock fa"></i> Çıkış Yap</a></li>
+                                    <li><a asp-controller="Login" asp-action="Logout"><i class="fa-lock fa"></i> @language.Getkey("logout")</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -111,10 +112,14 @@
                             <button class="btn btn-sm btn-default menu-link menu-link__tertiary">
                                 <i class="fa fa-user"></i>
                             </button>
+                            
                             <div class="menu-container">
+                               
+                                
                                 <ul class="header-top-nav header-top-nav__tertiary">
-                                    <li><a asp-controller="Login" asp-action="Index"><i class="fa-pencil-square-o fa"></i> Kayıt Ol</a></li>
-                                    <li><a asp-controller="Login" asp-action="Index"><i class="fa-lock fa"></i> Giriş Yap</a></li>
+                                
+                                    <li><a asp-controller="Login" asp-action="Index"><i class="fa-pencil-square-o fa"></i> @language.Getkey("signup")</a></li>
+                                    <li><a asp-controller="Login" asp-action="Index"><i class="fa-lock fa"></i> @language.Getkey("signin")</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -141,8 +146,25 @@
                 <!-- Banner -->
                 <div class="head-info">
                     <ul class="head-info-list">
-                        <li><span>Call us on:</span> +90 (531) 286 3832</li>
-                        <li><span>Email:</span> <a href="mailto:info@burakaydin.me">info@burakaydin.me</a></li>
+                        <div class="dropdown">
+                            @if (dil.ToString() == "en-US")
+                            {
+                                <img src="~/images/flags/ukflag.png">
+                                <button class="dropbtn"> English</button>
+                            }
+                            else
+                            {
+                                <img src="~/images/flags/trflag.png">
+                                <button class="dropbtn"> Türkçe</button>
+                            }
+                            
+                            <div class="dropdown-content">
+                                <li><a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="tr-TR"><img src="~/images/flags/trflag.png">@language.Getkey("turkish")</a></li>
+                                <li><a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US"><img src="~/images/flags/ukflag.png">@language.Getkey("ingilizce")</a></li>
+                            </div>
+                        </div>
+                        <li><span>@language.Getkey("callus"):</span> +90 (531) 286 3832</li>
+                        <li><span>@language.Getkey("email"):</span> <a href="mailto:info@burakaydin.me">info@burakaydin.me</a></li>
                     </ul>
                     <ul class="social-links">
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -161,12 +183,12 @@
         <nav class="nav-main">
             <div class="container">
                 <ul data-breakpoint="992" class="flexnav">
-                    <li class="@(ViewData["Active"] == "Home" ? "active" : "")">@Html.ActionLink("Anasayfa", "Index", "Home")</li>
-                    <li class="@(ViewData["Active"] == "About" ? "active" : "")">@Html.ActionLink("Hakkımızda", "About", "Home")</li>
-                    <li class="@(ViewData["Active"] == "List" ? "active" : "")">@Html.ActionLink("Sahiplen", "Index", "Adopt")</li>
-                    <li class="@(ViewData["Active"] == "Pet" ? "active" : "") "><a href="@Url.Action("Index","Pet")" target="_self">Sahiplendir</a></li>
+                    <li class="@(ViewData["Active"] == "Home" ? "active" : "")">@Html.ActionLink(@language.Getkey("home"), "Index", "Home")</li>
+                    <li class="@(ViewData["Active"] == "About" ? "active" : "")">@Html.ActionLink(@language.Getkey("aboutus"), "About", "Home")</li>
+                    <li class="@(ViewData["Active"] == "List" ? "active" : "")">@Html.ActionLink(@language.Getkey("listing"), "Index", "Adopt")</li>
+                    <li class="@(ViewData["Active"] == "Pet" ? "active" : "") "><a href="@Url.Action("Index","Pet")" target="_self">@language.Getkey("adopt")</a></li>
 
-                    <li class="@(ViewData["Active"] == "Contact" ? "active" : "")">@Html.ActionLink("İletişim", "Contact", "Home")</li>
+                    <li class="@(ViewData["Active"] == "Contact" ? "active" : "")">@Html.ActionLink(@language.Getkey("contact"), "Contact", "Home")</li>
 
                     <!--						<li><a href="#">Pages</a>-->
                     <!--							<ul>-->
@@ -283,7 +305,49 @@
         ga('send', 'pageview');</script>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+.dropbtn {
+  background-color: #FFFFFF;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 

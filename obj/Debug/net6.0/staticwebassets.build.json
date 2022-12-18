@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oQQMg3pnw0L1YRHKALZukvLVHAAe4b6ZLObI1hPaE6s=",
+  "Hash": "qZw8dhCPd13UKSAGqy5DVPYAaAFSnuJtd5YGVJYl7v8=",
   "Source": "AdoptPetProject",
   "BasePath": "_content/AdoptPetProject",
   "Mode": "Default",
@@ -508,6 +508,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/favicon.ico"
+    },
+    {
+      "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/images/flags/trflag.png",
+      "SourceId": "AdoptPetProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/",
+      "BasePath": "_content/AdoptPetProject",
+      "RelativePath": "images/flags/trflag.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/flags/trflag.png"
+    },
+    {
+      "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/images/flags/ukflag.png",
+      "SourceId": "AdoptPetProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/",
+      "BasePath": "_content/AdoptPetProject",
+      "RelativePath": "images/flags/ukflag.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/flags/ukflag.png"
     },
     {
       "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/images/logo-alt.png",

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="hello" xml:space="preserve">
+        <value>Merhaba</value>
+    </data>
+    <data name="selectLang" xml:space="preserve">
+        <value>Dil Seç</value>
+    </data>
+    <data name="signup" xml:space="preserve">
+        <value>Kayıt Ol</value>
+    </data>
+    <data name="signin" xml:space="preserve">
+        <value>Giriş Yap</value>
+    </data>
+    <data name="callus" xml:space="preserve">
+        <value>Bizi Ara</value>
+    </data>
+    <data name="email" xml:space="preserve">
+        <value>E-Posta</value>
+    </data>
+    <data name="home" xml:space="preserve">
+        <value>Anasayfa</value>
+    </data>
+    <data name="aboutus" xml:space="preserve">
+        <value>Hakkımızda</value>
+    </data>
+    <data name="adopt" xml:space="preserve">
+        <value>Sahiplendir</value>
+    </data>
+    <data name="listing" xml:space="preserve">
+        <value>İlanlar</value>
+    </data>
+    <data name="contact" xml:space="preserve">
+        <value>İletişim</value>
+    </data>
+    <data name="findmate" xml:space="preserve">
+        <value>Uygun Dostu Bul</value>
+    </data>
+    <data name="keyword" xml:space="preserve">
+        <value>Anahtar Kelime</value>
+    </data>
+    <data name="choosecategory" xml:space="preserve">
+        <value>Kategori Seç</value>
+    </data>
+    <data name="search" xml:space="preserve">
+        <value>Ara</value>
+    </data>
+    <data name="popular" xml:space="preserve">
+        <value>Popüler Hayvanlar</value>
+    </data>
+    <data name="sponsored" xml:space="preserve">
+        <value>Sponsorlu</value>
+    </data>
+    <data name="adoptPet" xml:space="preserve">
+        <value>Hayvan Sahiplendir</value>
+    </data>
+    <data name="signDescription" xml:space="preserve">
+        <value>İlan eklemek için giriş yapmak gerekli. Hesabın yok ise hemen bir hesap oluştur ve hayvanını sahiplendir.</value>
+    </data>
+    <data name="fillInfo" xml:space="preserve">
+        <value>Bilgileri Doldur</value>
+    </data>
+    <data name="fillDescription" xml:space="preserve">
+        <value>Sevgili dostunun tüm bilgilerini gir.</value>
+    </data>
+    <data name="success" xml:space="preserve">
+        <value>Başarılı!</value>
+    </data>
+    <data name="failure" xml:space="preserve">
+        <value>Hata</value>
+    </data>
+    <data name="successinfo" xml:space="preserve">
+        <value>Artık sevimli dostunun yeni bir dostu var. Amacımıza ulaştık ❤️
+</value>
+    </data>
+    <data name="addlisting" xml:space="preserve">
+        <value>İlan Ekle</value>
+    </data>
+    <data name="whywe" xml:space="preserve">
+        <value>Neden Biz?</value>
+    </data>
+    <data name="fastContact" xml:space="preserve">
+        <value>Hızlı İletişim</value>
+    </data>
+    <data name="fastContactDescription" xml:space="preserve">
+        <value>Ulaşmak istediğin kişiye aracı olmadan anında ulaş.</value>
+    </data>
+    <data name="easytouse" xml:space="preserve">
+        <value>Kullanım Kolaylığı</value>
+    </data>
+    <data name="dailyInfo" xml:space="preserve">
+        <value>Günlük Bilgiler</value>
+    </data>
+    <data name="dailyDescription" xml:space="preserve">
+        <value>Dostunu en iyi şekilde nasıl besleyebileceğin hakkında bilgileri günlük paylaşıyoruz.</value>
+    </data>
+    <data name="pleasure" xml:space="preserve">
+        <value>Memnuniyet</value>
+    </data>
+    <data name="pleasureDescription" xml:space="preserve">
+        <value>Sahiplendirdiğiniz hayvanların sahiplerinden 99% olumlu dönüşler alıyoruz.</value>
+    </data>
+    <data name="whatsaidcustomers" xml:space="preserve">
+        <value>Hayvanseverler ne dedi?</value>
+    </data>
+    <data name="lastcomments" xml:space="preserve">
+        <value>Son Yorumlar</value>
+    </data>
+    <data name="firstComment" xml:space="preserve">
+        <value>İlk köpeğime Adopt Pet aracılığı ile sahip oldum. Şu an dostumla çok eğleniyoruz, parklarda koşuyor ve zıplıyoruz.</value>
+    </data>
+    <data name="petlover" xml:space="preserve">
+        <value>Hayvansever</value>
+    </data>
+    <data name="investor" xml:space="preserve">
+        <value>Yatırımcı</value>
+    </data>
+    <data name="secondComment" xml:space="preserve">
+        <value>Eğer hayvan sahiplenmeyi düşünüyorsanız, bu site tam size göre! Hayvan sahiplendikten sonra çok mutluyum. Hayvanımla aramızda oluşan bağ hayatımın önemli bir parçası haline geldi.</value>
+    </data>
+    <data name="logout" xml:space="preserve">
+        <value>Çıkış Yap</value>
+    </data>
+    <data name="turkish" xml:space="preserve">
+        <value>Türkçe</value>
+    </data>
+    <data name="english" xml:space="preserve">
+        <value>İngilizce</value>
+    </data>
+    <data name="mostLiked" xml:space="preserve">
+        <value>En Sevilen Hayvanlar</value>
+    </data>
+    <data name="easytouseDescription" xml:space="preserve">
+        <value>Sadece 5 dakika harcayarak hayvanına yeni bir dost bul.</value>
+    </data>
+    <data name="addfree" xml:space="preserve">
+        <value>Ücretsiz İlan Ekle</value>
+    </data>
+    <data name="username" xml:space="preserve">
+        <value>Kullanıcı Adı</value>
+    </data>
+    <data name="password" xml:space="preserve">
+        <value>Şifre</value>
+    </data>
+    <data name="rememberme" xml:space="preserve">
+        <value>Beni Hatırla</value>
+    </data>
+    <data name="login" xml:space="preserve">
+        <value>Giriş Yap</value>
+    </data>
+    <data name="repassword" xml:space="preserve">
+        <value>Şifreyi Doğrula</value>
+    </data>
+    <data name="phone" xml:space="preserve">
+        <value>Telefon</value>
+    </data>
+    <data name="description" xml:space="preserve">
+        <value>Açıklama</value>
+    </data>
+    <data name="listingage" xml:space="preserve">
+        <value>Yaş</value>
+    </data>
+    <data name="listingcategory" xml:space="preserve">
+        <value>Kategori</value>
+    </data>
+    <data name="listingtitle" xml:space="preserve">
+        <value>İlan Başlığı</value>
+    </data>
+    <data name="listingprovince" xml:space="preserve">
+        <value>Lokasyon</value>
+    </data>
+    <data name="photo" xml:space="preserve">
+        <value>Fotoğraf</value>
+    </data>
+    <data name="maxsize" xml:space="preserve">
+        <value>Max. dosya boyutu:</value>
+    </data>
+    <data name="createlisting" xml:space="preserve">
+        <value>İlanı Oluştur</value>
+    </data>
+</root>

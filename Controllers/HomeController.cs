@@ -1,8 +1,9 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using AdoptPetProject.Models;
-using Microsoft.AspNetCore.Session;
+
 using System.Drawing;
+using Microsoft.AspNetCore.Localization;
 
 namespace AdoptPetProject.Controllers;
 
@@ -10,17 +11,17 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
-    private readonly IHttpContextAccessor session;
-    public HomeController(ILogger<HomeController> logger, IHttpContextAccessor httpContextAccessor)
+   
+    public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
-        session = httpContextAccessor;
+        
     }
 
     public IActionResult Index()
     {
 
-        session.HttpContext.Session.SetString("Name","Burak");
+        
 
         
         AdoptPetContext context = new AdoptPetContext();
@@ -58,8 +59,6 @@ public class HomeController : Controller
         var pets = context.Pets.ToList();
         var catList = context.Categories.ToList();
         var users = context.Users.ToList();
-        var model = new ViewModel();
-        ViewModel mymodel = new ViewModel();
         ViewData["Pets"] = pets;
         ViewData["Categories"] = catList;
         ViewData["Users"] = users;
@@ -94,6 +93,16 @@ public class HomeController : Controller
         ViewData["Active"] = "Contact";
 
         return View();
+    }
+
+    public IActionResult ChangeLanguage(string culture)
+    {
+        
+        Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName,
+            CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+            new CookieOptions() {Expires = DateTimeOffset.UtcNow.AddYears(1)});
+        return Redirect(Request.Headers["Referer"].ToString());
+        
     }
     
 }

@@ -92,3 +92,12 @@
 /Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/bin/Debug/net6.0/JWT.dll
 /Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/bin/Debug/net6.0/MD5.dll
 /Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/obj/Debug/net6.0/AdoptPetProject.Resources.SharedResource.en-US.resources
+/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/obj/Debug/net6.0/AdoptPetProject.Resources.SharedResource.tr-TR.resources
+/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/obj/Debug/net6.0/AdoptPetProject.csproj.GenerateResource.cache
+/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/bin/Debug/net6.0/en-US/AdoptPetProject.resources.dll
+/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/bin/Debug/net6.0/tr-TR/AdoptPetProject.resources.dll
+/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/obj/Debug/net6.0/en-US/AdoptPetProject.resources.cs
+/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/obj/Debug/net6.0/en-US/AdoptPetProject.resources.dll
+/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/obj/Debug/net6.0/tr-TR/AdoptPetProject.resources.cs
+/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/obj/Debug/net6.0/tr-TR/AdoptPetProject.resources.dll

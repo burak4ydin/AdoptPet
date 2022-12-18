@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="hello" xml:space="preserve">
+        <value>Hello</value>
+    </data>
+    <data name="aboutus" xml:space="preserve">
+        <value>About Us</value>
+    </data>
+    <data name="addlisting" xml:space="preserve">
+        <value>Add Listing</value>
+    </data>
+    <data name="adopt" xml:space="preserve">
+        <value>Adopt</value>
+    </data>
+    <data name="callus" xml:space="preserve">
+        <value>Call Us</value>
+    </data>
+    <data name="adoptPet" xml:space="preserve">
+        <value>Adopt A Pet</value>
+    </data>
+    <data name="choosecategory" xml:space="preserve">
+        <value>Choose A Category</value>
+    </data>
+    <data name="contact" xml:space="preserve">
+        <value>Contact</value>
+    </data>
+    <data name="dailyDescription" xml:space="preserve">
+        <value>We share daily information about how you can best feed your friend.</value>
+    </data>
+    <data name="dailyInfo" xml:space="preserve">
+        <value>Daily Useful Infos</value>
+    </data>
+    <data name="easytouse" xml:space="preserve">
+        <value>Easy To Use</value>
+    </data>
+    <data name="email" xml:space="preserve">
+        <value>E-Mail</value>
+    </data>
+    <data name="failure" xml:space="preserve">
+        <value>Fail</value>
+    </data>
+    <data name="fastContact" xml:space="preserve">
+        <value>Fast Contact</value>
+    </data>
+    <data name="fastContactDescription" xml:space="preserve">
+        <value>Reach the person you want to reach instantly without intermediaries.</value>
+    </data>
+    <data name="fillDescription" xml:space="preserve">
+        <value>Enter all your dear friend's information.</value>
+    </data>
+    <data name="fillInfo" xml:space="preserve">
+        <value>Enter Identity of your mate</value>
+    </data>
+    <data name="findmate" xml:space="preserve">
+        <value>Find A Petmate</value>
+    </data>
+    <data name="firstComment" xml:space="preserve">
+        <value>I got my first dog through Adopt Pet. Right now we are having a lot of fun with my friend, running and jumping in the parks.</value>
+    </data>
+    <data name="home" xml:space="preserve">
+        <value>Home</value>
+    </data>
+    <data name="investor" xml:space="preserve">
+        <value>Investor</value>
+    </data>
+    <data name="keyword" xml:space="preserve">
+        <value>Keyword</value>
+    </data>
+    <data name="lastcomments" xml:space="preserve">
+        <value>Last Comments</value>
+    </data>
+    <data name="listing" xml:space="preserve">
+        <value>Listings</value>
+    </data>
+    <data name="petlover" xml:space="preserve">
+        <value>Petlover</value>
+    </data>
+    <data name="pleasure" xml:space="preserve">
+        <value>Pleasure</value>
+    </data>
+    <data name="pleasureDescription" xml:space="preserve">
+        <value>We receive 99% positive feedback from the owners of the animals you adopt.</value>
+    </data>
+    <data name="popular" xml:space="preserve">
+        <value>Populars</value>
+    </data>
+    <data name="search" xml:space="preserve">
+        <value>Search</value>
+    </data>
+    <data name="secondComment" xml:space="preserve">
+        <value>If you are thinking of adopting a pet, this site is for you! I am very happy after adopting an animal. The bond between me and my animal has become an important part of my life.</value>
+    </data>
+    <data name="selectLang" xml:space="preserve">
+        <value>Select Language</value>
+    </data>
+    <data name="signDescription" xml:space="preserve">
+        <value>You must be logged in to add an ad. If you don't have an account, create an account now and adopt your pet.</value>
+    </data>
+    <data name="signin" xml:space="preserve">
+        <value>Sign In</value>
+    </data>
+    <data name="signup" xml:space="preserve">
+        <value>Sign Up</value>
+    </data>
+    <data name="sponsored" xml:space="preserve">
+        <value>Sponsored</value>
+    </data>
+    <data name="success" xml:space="preserve">
+        <value>Success!</value>
+    </data>
+    <data name="successinfo" xml:space="preserve">
+        <value>Now your cute friend has a new friend. We reached our goal ❤️</value>
+    </data>
+    <data name="whatsaidcustomers" xml:space="preserve">
+        <value>What Petlovers Said?</value>
+    </data>
+    <data name="whywe" xml:space="preserve">
+        <value>Why We Are?</value>
+    </data>
+    <data name="logout" xml:space="preserve">
+        <value>Logout</value>
+    </data>
+    <data name="turkish" xml:space="preserve">
+        <value>Turkish</value>
+    </data>
+    <data name="english" xml:space="preserve">
+        <value>English</value>
+    </data>
+    <data name="mostLiked" xml:space="preserve">
+        <value>Most Liked Pets</value>
+    </data>
+    <data name="easytouseDescription" xml:space="preserve">
+        <value>Find a new friend for your pet in just 5 minutes.</value>
+    </data>
+    <data name="addfree" xml:space="preserve">
+        <value>Add Listing For Free</value>
+    </data>
+    <data name="username" xml:space="preserve">
+        <value>Username</value>
+    </data>
+    <data name="password" xml:space="preserve">
+        <value>Password</value>
+    </data>
+    <data name="rememberme" xml:space="preserve">
+        <value>Remember Me</value>
+    </data>
+    <data name="login" xml:space="preserve">
+        <value>Login</value>
+    </data>
+    <data name="repassword" xml:space="preserve">
+        <value>Password Again</value>
+    </data>
+    <data name="phone" xml:space="preserve">
+        <value>Phone</value>
+    </data>
+    <data name="listingtitle" xml:space="preserve">
+        <value>Title</value>
+    </data>
+    <data name="listingage" xml:space="preserve">
+        <value>Age</value>
+    </data>
+    <data name="listingprovince" xml:space="preserve">
+        <value>Province</value>
+    </data>
+    <data name="listingcategory" xml:space="preserve">
+        <value>Category</value>
+    </data>
+    <data name="description" xml:space="preserve">
+        <value>Description</value>
+    </data>
+    <data name="photo" xml:space="preserve">
+        <value>Photo</value>
+    </data>
+    <data name="maxsize" xml:space="preserve">
+        <value>Max. Filesize:</value>
+    </data>
+    <data name="createlisting" xml:space="preserve">
+        <value>Create Listing</value>
+    </data>
+</root>
