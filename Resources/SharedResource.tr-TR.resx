@@ -196,4 +196,26 @@
     <data name="createlisting" xml:space="preserve">
         <value>İlanı Oluştur</value>
     </data>
+    <data name="categories" xml:space="preserve">
+        <value>Kategoriler</value>
+    </data>
+    <data name="haveaccount" xml:space="preserve">
+        <value>Hesabınız var mı?</value>
+    </data>
+    <data name="addedlisting" xml:space="preserve">
+        <value>İlanınız eklendi, anasayfaya yönlendiriliyorsunuz...</value>
+    </data>
+    <data name="logined" xml:space="preserve">
+        <value>Giriş sağlandı, anasayfaya yönlendiriliyorsunuz...</value>
+    </data>
+    <data name="name" xml:space="preserve">
+        <value>İsim</value>
+    </data>
+    <data name="aboutcontent" xml:space="preserve">
+        <value>Hayvan Sahiplendirme İlanları olarak, hayvanların sahiplenilmesi için çalışmak bizim için mükemmel bir keyiftir. Hayvan sahiplendirme, hayvanların kötü durumlardan kurtulmasının yanı sıra üyelerimize hayatlarının herhangi bir döneminde hayvan sevgisi, sorumluluk ve sevgi ile dolu anlar yaşama fırsatını sunmaktadır.
+
+Biz, sahiplenilmeyi bekleyen köpekler, kediler, tavşanlar ve diğer tüm evcil hayvanlar için yardım etmeyi kendimize görev edinmişiz. Sahiplenilmeyi bekleyen hayvanların üyelerimiz tarafından keşfedilmesini, en iyi evleri bulmalarına yardımcı olmak da önceliğimizdir.
+
+Sahiplendirme başvurularını kontrol etmek, hayvanların güvenli ve iyi sahiplenilmesi için gerekli adımları atmak ve sahipleriyle hayvanlarının ilişkilerini güçlendirmek bizim için son derece önemlidir. Biz, sahiplendirmeyi kolaylaştırmak ve hayvanların hayatlarının iyileştirilmesine yardımcı olmak için ekibimizle birlikte sürekli olarak çalışıyoruz.Tüm bu çalışmalarımızın temelinde, hayvanların ve insanların hayatlarının daha iyi olması için çalışıyoruz. Topluma karşı sorumlu hareket etmekte kararlıyız ve en iyi hayatlarını yaşamaları için çaba sarf ediyoruz.</value>
+    </data>
 </root>

@@ -1,152 +1,198 @@
+@using System.Net
+@using System.Web
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
 
 @{
 }
+ @inject LanguageService language; 
 
+@functions
+{
+    public String Translate(String word)
+    {
+        var dil = System.Threading.Thread.CurrentThread.CurrentCulture;
+        var toLanguage = dil.ToString().Split("-")[0].Trim(); //English
+        var fromLanguage = "tr";//Deutsch
+        var url = $"https://translate.googleapis.com/translate_a/single?client=gtx&sl={fromLanguage}&tl={toLanguage}&dt=t&q={HttpUtility.UrlEncode(word)}";
+        var webClient = new WebClient
+        {
+            Encoding = System.Text.Encoding.UTF8
+        };
+        var result = webClient.DownloadString(url);
+        try
+        {
+            result = result.Substring(4, result.IndexOf("\"", 4, StringComparison.Ordinal) - 4);
+            return result;
+        }
+        catch
+        {
+            return "Error";
+        }
+    }
+	
+}
 
+<script type="text/javascript">
+let gonder = ()=>{
+	@ViewData["send"]="ok";
+	alert("geldi");
+	setTimeout(()=>{
+	@ViewData["send"]="failss";
+		
+	},2500)
+}
+</script>
+<div class="main" role="main">
 
-
-		<div class="main" role="main">
-
-			<!-- Page Heading -->
-			<section class="page-heading">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6">
-							<h1>Contacts</h1>
-						</div>
-						<div class="col-md-6">
-							<ul class="breadcrumb">
-								<li><a href="index.html">Home</a></li>
-								<li class="active">Contacts</li>
-							</ul>
-						</div>
-					</div>
+	<!-- Page Heading -->
+	<section class="page-heading">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h1>@Translate("Contact")</h1>
 				</div>
-			</section>
-			<!-- Page Heading / End -->
+				<div class="col-md-6">
+					<ul class="breadcrumb">
+						@* <li><a href="index.html">Home</a></li> *@
+						@* <li class="active">Contacts</li> *@
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Page Heading / End -->
 
-			<!-- Page Content -->
-			<section class="page-content">
+	<!-- Page Content -->
+	<section class="page-content">
 
-				<div class="container">
+		<div class="container">
 
-					<!-- Google Map -->
+			<!-- Google Map -->
 					
-					<!-- Google Map / End -->
+			<!-- Google Map / End -->
 					
-					<div class="row">
-						<div class="col-md-9">
-							<h2>İletişim Formu</h2>
-							<form action="php/contact-form.php.json" id="contact-form">
+			<div class="row">
+				<div class="col-md-9">
+					<h2>@Translate("İletişim Formu") </h2>
+					<form id="contact-form" onSubmit="return gonder()">
+						@if (ViewData["send"] == "ok")
+						{
+							<div class="alert alert-success hidden" id="contact-alert-success">
+								<strong>@language.Getkey("success")</strong> Mesajını aldık, en kısa zamanda döneceğiz!
+							</div>
+						}else if (ViewData["send"] == "fail")
+						{
+							<div class="alert alert-danger hidden" id="contact-alert-error">
+								<strong>@language.Getkey("failure")</strong> Bir şeyler ters gitti, tekrar dene.
+							</div>
+						}
+						
+						
 
-								<div class="alert alert-success hidden" id="contact-alert-success">
-									<strong>Başarılı!</strong> Mesajını aldık, en kısa zamanda döneceğiz!
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>@language.Getkey("name") <span class="required">*</span></label>
+									<input type="text"
+									       value=""
+									       data-msg-required="Please enter your name."
+									       class="form-control"
+									       name="name" id="name">
 								</div>
-								<div class="alert alert-danger hidden" id="contact-alert-error">
-									<strong>Hata!</strong> Bir şeyler ters gitti, tekrar dene.
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>@language.Getkey("email") <span class="required">*</span></label>
+									<input type="email"
+									       value=""
+									       data-msg-required="Please enter your email address."
+									       data-msg-email="Please enter a valid email address."
+									       class="form-control"
+									       name="email"
+									       id="email">
 								</div>
-
-								<div class="row">
-									<div class="col-md-4">
-										<div class="form-group">
-											<label>İsim <span class="required">*</span></label>
-											<input type="text"
-												value=""
-												data-msg-required="Please enter your name."
-												class="form-control"
-												name="name" id="name">
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="form-group">
-											<label>E-Posta <span class="required">*</span></label>
-											<input type="email" 
-												value=""
-												data-msg-required="Please enter your email address."
-												data-msg-email="Please enter a valid email address."
-												class="form-control"
-												name="email"
-												id="email">
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="form-group">
-											<label>Konu</label>
-											<input type="text" 
-												value=""
-												data-msg-required="Please enter the subject."
-												class="form-control"
-												name="subject"
-												id="subject">
-										</div>
-									</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>@Translate("Konu")</label>
+									<input type="text"
+									       value=""
+									       data-msg-required="Please enter the subject."
+									       class="form-control"
+									       name="subject"
+									       id="subject">
 								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group">
-											<label>Mesajınız <span class="required">*</span></label>
-											<textarea
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>@Translate("Mesaj") <span class="required">*</span></label>
+									<textarea
 												data-msg-required="Please enter your message."
 												rows="10"
 												class="form-control"
 												name="message"
 												id="message"></textarea>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<input type="submit" value="Send Message" class="btn btn-primary" data-loading-text="Loading...">
-									</div>
-								</div>
-							</form>
-						</div>
-						<div class="col-md-3">
-							<hr class="visible-sm visible-xs lg">
-							<!-- Widget :: Contacts Info -->
-							<div class="contacts-widget widget widget__sidebar">
-								<h3 class="widget-title">İletişim Bilgileri</h3>
-								<div class="widget-content">
-									<ul class="contacts-info-list">
-										<li>
-											<i class="fa fa-map-marker"></i>
-											<div class="info-item">
-												Adopt Pet Co., İstiklal Mah. Serdivan/Sakarya
-											</div>
-										</li>
-										<li>
-											<i class="fa fa-phone"></i>
-											<div class="info-item">
-												+90 850-324-5678
-											</div>
-										</li>
-										<li>
-											<i class="fa fa-envelope"></i>
-											<span class="info-item">
-												<a href="mailto:info@dan-fisher.com">info@adoptpet.com</a>
-											</span>
-										</li>
-										
-										<li>
-											<i class="fa fa-clock-o"></i>
-											<div class="info-item">
-												Pzt - Salı 9:00 - 21:00
-											</div>
-										</li>
-									</ul>
 								</div>
 							</div>
-							<!-- /Widget :: Contacts Info -->
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<input type="submit" onclick = "gonder()"  value="@Translate("Mesajı Gönder")" class="btn btn-primary" data-loading-text="Loading...">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-3">
+					<hr class="visible-sm visible-xs lg">
+					<!-- Widget :: Contacts Info -->
+					<div class="contacts-widget widget widget__sidebar">
+						<h3 class="widget-title">@Translate("İletişim Bilgileri")</h3>
+						<div class="widget-content">
+							<ul class="contacts-info-list">
+								<li>
+									<i class="fa fa-map-marker"></i>
+									<div class="info-item">
+										Adopt Pet Co., İstiklal Mah. Serdivan/Sakarya
+									</div>
+								</li>
+								<li>
+									<i class="fa fa-phone"></i>
+									<div class="info-item">
+										+90 850-324-5678
+									</div>
+								</li>
+								<li>
+									<i class="fa fa-envelope"></i>
+									<span class="info-item">
+										<a href="mailto:info@dan-fisher.com">info@adoptpet.com</a>
+									</span>
+								</li>
+										
+								<li>
+									<i class="fa fa-clock-o"></i>
+									<div class="info-item">
+										@Translate("Pazartesi - Cumartesi 9:00 - 21:00")
+									</div>
+								</li>
+							</ul>
 						</div>
 					</div>
-
+					<!-- /Widget :: Contacts Info -->
 				</div>
+			</div>
 
-			</section>
-			<!-- Page Content / End -->
+		</div>
+
+	</section>
+	<!-- Page Content / End -->
 
 			
 
-		</div>
+</div>
+
+
 
 

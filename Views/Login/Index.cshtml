@@ -1,4 +1,7 @@
-﻿@model IEnumerable<AdoptPetProject.Models.User>
+﻿@using System.Net
+@using System.Web
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<AdoptPetProject.Models.User>
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,8 +11,31 @@
     
 
 }
-
-
+@functions
+{
+    public String Translate(String word)
+    {
+        var dil = System.Threading.Thread.CurrentThread.CurrentCulture;
+        var toLanguage = dil.ToString().Split("-")[0].Trim(); //English
+        var fromLanguage = "tr";//Deutsch
+        var url = $"https://translate.googleapis.com/translate_a/single?client=gtx&sl={fromLanguage}&tl={toLanguage}&dt=t&q={HttpUtility.UrlEncode(word)}";
+        var webClient = new WebClient
+        {
+            Encoding = System.Text.Encoding.UTF8
+        };
+        var result = webClient.DownloadString(url);
+        try
+        {
+            result = result.Substring(4, result.IndexOf("\"", 4, StringComparison.Ordinal) - 4);
+            return result;
+        }
+        catch
+        {
+            return "Error";
+        }
+    }
+}
+@inject LanguageService language
 
 <section class="page-content">
     <div class="container">
@@ -17,7 +43,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="box">
-                    <h3>Giriş Yap</h3>
+                    <h3>@language.Getkey("login")</h3>
                     @{
 
                         if (ViewData["loginOK"] == "ok")
@@ -25,33 +51,33 @@
 
 
                             <div class="alert alert-success" id="newsletter-alert-success">
-                                <strong>Başarılı!</strong> Giriş sağlandı, anasayfaya yönlendiriliyorsunuz...
+                                <strong>@language.Getkey("success")</strong> @language.Getkey("logined")
                             </div>
                         }
                         else if (ViewData["loginOK"] == "error")
                         {
                             <div class="alert alert-danger" id="newsletter-alert-error">
-                                <strong>Hata!</strong> @ViewData["loginError"]
+                                <strong>@language.Getkey("failure")</strong> @Translate(ViewData["loginError"].ToString())
                             </div>
                         }
                     }
                     <form asp-controller="Login" asp-action="Index" method="POST" role="form">
                         <div class="form-group">
-                            <label>Kullanıcı Adı <span class="required">*</span></label>
+                            <label>@language.Getkey("username") <span class="required">*</span></label>
                             <input type="text" name="username" class="form-control">
                         </div>
                         <div class="form-group">
                             <div class="clearfix">
                                 <label class="pull-left">
-                                    Şifre <span class="required">*</span>
+                                    @language.Getkey("password") <span class="required">*</span>
                                 </label>
                                 <!--											<span class="pull-right"><a href="#">Lost password?</a></span>-->
                             </div>
                             <input type="password" name="password"  class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-inline">Giriş Yap</button>&nbsp; &nbsp; &nbsp;
+                        <button type="submit" class="btn btn-primary btn-inline">@language.Getkey("login")</button>&nbsp; &nbsp; &nbsp;
                         <label for="remember" class="checkbox-inline">
-                            <input type="checkbox" name="remember" id="remember"> Beni Hatırla
+                            <input type="checkbox" name="remember" id="remember"> @language.Getkey("rememberme")
                         </label>
                     </form>
                 </div>
@@ -59,7 +85,7 @@
             <div class="col-md-6">
                 <div class="spacer-lg visible-sm visible-xs"></div>
                 <div class="box">
-                    <h3>Kayıt Ol</h3>
+                    <h3>@language.Getkey("signup")</h3>
                     @{
 
                         if (ViewData["registerOK"] == "ok")
@@ -67,30 +93,30 @@
 
 
                             <div class="alert alert-success" id="newsletter-alert-success">
-                                <strong>Başarılı!</strong> Kayıt olundu giriş yapabilirsin.
+                                <strong>@language.Getkey("success")</strong> @Translate("Kayıt olundu giriş yapabilirsin.")
                             </div>
                         }
                         else if (ViewData["registerOK"] == "error")
                         {
                             <div class="alert alert-danger" id="newsletter-alert-error">
-                                <strong>Hata!</strong> @ViewData["hata"]
+                                <strong>@language.Getkey("failure")</strong> @Translate(ViewData["hata"].ToString())
                             </div>
                         }
                     }
                 <form asp-controller="Login" asp-action="Index" method="POST" role="form">
                     <div class="form-group">
-                        <label>İsim <span class="required">*</span></label>
+                        <label>@language.Getkey("name") <span class="required">*</span></label>
                         <input type="text" name="name" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Kullanıcı Adı <span class="required">*</span></label>
+                        <label>@language.Getkey("username") <span class="required">*</span></label>
                         <input type="text" name="username" class="form-control">
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>
-                                    Şifre <span class="required">*</span>
+                                    @language.Getkey("password") <span class="required">*</span>
                                 </label>
                                 <input name="password" type="password" class="form-control">
                             </div>
@@ -98,17 +124,17 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>
-                                    Şifreyi Doğrula <span class="required">*</span>
+                                    @language.Getkey("repassword") <span class="required">*</span>
                                 </label>
                                 <input type="password" name="again" class="form-control">
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Telefon <span class="required">*</span></label>
+                        <label>@language.Getkey("phone") <span class="required">*</span></label>
                         <input type="text" name="phone" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+                    <button type="submit" class="btn btn-primary">@language.Getkey("signup")</button>
                 </form>
                 </div>
             </div>

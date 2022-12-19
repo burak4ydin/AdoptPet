@@ -398,5 +398,41 @@ namespace AdoptPetProject.Resources {
                 return ResourceManager.GetString("createlisting", resourceCulture);
             }
         }
+        
+        internal static string categories {
+            get {
+                return ResourceManager.GetString("categories", resourceCulture);
+            }
+        }
+        
+        internal static string haveaccount {
+            get {
+                return ResourceManager.GetString("haveaccount", resourceCulture);
+            }
+        }
+        
+        internal static string addedlisting {
+            get {
+                return ResourceManager.GetString("addedlisting", resourceCulture);
+            }
+        }
+        
+        internal static string logined {
+            get {
+                return ResourceManager.GetString("logined", resourceCulture);
+            }
+        }
+        
+        internal static string name {
+            get {
+                return ResourceManager.GetString("name", resourceCulture);
+            }
+        }
+        
+        internal static string aboutcontent {
+            get {
+                return ResourceManager.GetString("aboutcontent", resourceCulture);
+            }
+        }
     }
 }

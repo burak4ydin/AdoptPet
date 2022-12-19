@@ -1,10 +1,37 @@
-﻿@model IEnumerable<AdoptPetProject.Models.Category>
+﻿@using System.Net
+@using System.Web
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<AdoptPetProject.Models.Category>
 @inject IHttpContextAccessor Accessor
+@inject LanguageService language
 
 @{
 
 }
-
+@functions
+{
+    public String Translate(String word)
+    {
+        var dil = System.Threading.Thread.CurrentThread.CurrentCulture;
+        var toLanguage = dil.ToString().Split("-")[0].Trim(); //English
+        var fromLanguage = "tr";//Deutsch
+        var url = $"https://translate.googleapis.com/translate_a/single?client=gtx&sl={fromLanguage}&tl={toLanguage}&dt=t&q={HttpUtility.UrlEncode(word)}";
+        var webClient = new WebClient
+        {
+            Encoding = System.Text.Encoding.UTF8
+        };
+        var result = webClient.DownloadString(url);
+        try
+        {
+            result = result.Substring(4, result.IndexOf("\"", 4, StringComparison.Ordinal) - 4);
+            return result;
+        }
+        catch
+        {
+            return "Error";
+        }
+    }
+}
 <section class="page-content">
     <div class="container">
 
@@ -20,13 +47,13 @@
 
 
                             <div class="alert alert-success" id="newsletter-alert-success">
-                                <strong>Başarılı!</strong> İlanınız eklendi, anasayfaya yönlendiriliyorsunuz...
+                                <strong>@language.Getkey("success")</strong> @language.Getkey("addedlisting")
                             </div>
                         }
                         else if (ViewData["added"] == "error")
                         {
                             <div class="alert alert-danger" id="newsletter-alert-error">
-                                <strong>Hata!</strong> @ViewData["addedError"]
+                                <strong>@language.Getkey("failure")</strong> @ViewData["addedError"]
                             </div>
                         }
                     }
@@ -35,19 +62,19 @@
                         if (Accessor.HttpContext.Session.GetString("token")!=null)
                         {
                             <fieldset class="fieldset-job_title">
-                                <label for="job_title">İlan Başlığı</label>
+                                <label for="job_title">@language.Getkey("listingtitle")</label>
                                 <div class="field">
-                                    <input type="text" class="form-control" name="name" id="job_title" placeholder="Dogo Argentino Köpeğimizi Sahiplendirecegiz" value="" />
+                                    <input type="text" class="form-control" name="name" id="job_title" placeholder="@Translate("Dogo Argentino Köpeğimizi Sahiplendirecegiz")" value="" />
                                 </div>
                             </fieldset>
                             <fieldset class="fieldset-job_title">
-                                <label for="job_title">Yaş</label>
+                                <label for="job_title">@language.Getkey("listingage")</label>
                                 <div class="field">
                                     <input type="text" class="form-control" name="age" id="job_title" placeholder="3" value="" />
                                 </div>
                             </fieldset>
                             <fieldset class="fieldset-job_location">
-                                <label for="job_location">Lokasyon <small>(optional)</small></label>
+                                <label for="job_location">@language.Getkey("listingprovince") <small>(optional)</small></label>
                                 <div class="field">
                                     <input type="text" class="form-control" name="location" id="job_location" placeholder="e.g. &quot;Istanbul&quot;, &quot;Ankara&quot;, &quot;İzmir&quot;" value="" />
                                     <small class="description">Leave this blank if the job can be done from anywhere (i.e. telecommuting)</small>
@@ -57,7 +84,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <fieldset class="fieldset-job_type">
-                                        <label for="job_type">Kategori</label>
+                                        <label for="job_type">@language.Getkey("listingcategory")</label>
                                         <div class="field select-style">
                                             <select name="catId" id="job_type" class="form-control">
                                                 @*<option value="unspecified">Unspecified</option>
@@ -67,7 +94,7 @@
                                                     <option value="dog-walker">Dog Walker</option>*@
                                                 @foreach (var i in Model)
                                                 {
-                                                    <option value="@i.id">@i.catName</option>
+                                                    <option value="@i.id">@Translate(i.catName)</option>
                                                 }
                                             </select>
                                         </div>
@@ -88,7 +115,7 @@
                             </div>
 
                             <fieldset class="fieldset-job_description">
-                                <label>Açıklama</label>
+                                <label>@language.Getkey("description")</label>
                                 <div class="field">
                                     <textarea name="description" cols="30" rows="8" class="form-control"></textarea>
                                 </div>
@@ -102,11 +129,11 @@
                             <!--								</fieldset>-->
 
                             <fieldset class="fieldset-company_logo">
-                                <label for="company_logo">Fotoğraf <small>(optional)</small></label>
+                                <label for="company_logo">@language.Getkey("photo") <small>(optional)</small></label>
                                 <div class="field">
                                     <input type="file" class="form-control" name="image" />
                                     <small class="description">
-                                        Max. dosya boyutu: 32 MB.
+                                        @language.Getkey("maxsize") 32 MB.
                                     </small>
                                 </div>
                             </fieldset>
@@ -114,16 +141,16 @@
                             <div class="spacer"></div>
 
                             <p>
-                                <input type="submit" name="submit_job" class="btn btn-primary" value="İlanı Oluştur  &rarr;" />
+                                <input type="submit" name="submit_job" class="btn btn-primary" value="@language.Getkey("createlisting")  &rarr;" />
                             </p>
                         }
                         else
                         {
                             <fieldset>
-                                <label>Hesabınız var mı?</label>
+                                <label>@language.Getkey("haveaccount")</label>
                                 <div class="field account-sign-in">
                                     <p>
-                                        <a class="btn btn-primary btn-sm" asp-controller="Login" asp-action="Index"><i class="fa fa-key"></i> Giriş Yap</a>
+                                        <a class="btn btn-primary btn-sm" asp-controller="Login" asp-action="Index"><i class="fa fa-key"></i> @language.Getkey("login")</a>
                                     </p>
 
                                     <!--										<div class="alert alert-info alert-dismissable">-->

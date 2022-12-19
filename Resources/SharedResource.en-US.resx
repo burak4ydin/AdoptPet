@@ -195,4 +195,22 @@
     <data name="createlisting" xml:space="preserve">
         <value>Create Listing</value>
     </data>
+    <data name="categories" xml:space="preserve">
+        <value>Categories</value>
+    </data>
+    <data name="haveaccount" xml:space="preserve">
+        <value>Do you have an account?</value>
+    </data>
+    <data name="addedlisting" xml:space="preserve">
+        <value>The ad added, redirecting to Home...</value>
+    </data>
+    <data name="logined" xml:space="preserve">
+        <value>Signed in successfully.</value>
+    </data>
+    <data name="name" xml:space="preserve">
+        <value>Name</value>
+    </data>
+    <data name="aboutcontent" xml:space="preserve">
+        <value>At Animal Adoption Posts, it is our great pleasure to work for the adoption of animals. Pet adoption offers our members the opportunity to experience moments full of animal love, responsibility and love at any time in their lives, as well as getting rid of bad situations. We are committed to helping dogs, cats, rabbits and all other pets waiting to be adopted. It is also our priority to help our members discover the animals waiting to be adopted and find the best homes. It is extremely important to us to control adoption applications, take the necessary steps to ensure safe and good ownership of animals, and strengthen the relationship between their owners and their animals. We are constantly working with our team to facilitate adoption and help improve the lives of animals. we are working to be better. We are committed to acting responsibly towards society and we strive for them to live their best lives. </value>
+    </data>
 </root>

@@ -190,7 +190,7 @@
                                         </div>
                                         <footer class="job-listing-footer">
                                             <ul class="meta">
-                                                <li class="category">@categories.FirstOrDefault(u => u.id == i.catId).catName</li>
+                                                <li class="category">@Translate(categories.FirstOrDefault(u => u.id == i.catId).catName)</li>
                                                 <li class="location"><a href="#">@i.province</a></li>
                                                 <li class="date">@users.FirstOrDefault(u => u.id == i.userId).name </li>
                                             </ul>
@@ -221,7 +221,7 @@
                                     </div>
                                     <footer class="job-listing-footer">
                                         <ul class="meta">
-                                            <li class="category">@categories.FirstOrDefault(u => u.id == i.catId).catName</li>
+                                            <li class="category">@Translate(categories.FirstOrDefault(u => u.id == i.catId).catName)</li>
                                             <li class="location"><a href="#">@i.province</a></li>
                                             <li class="date">@users.FirstOrDefault(u => u.id == i.userId).name</li>
                                         </ul>
