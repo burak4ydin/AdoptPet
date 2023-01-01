@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qZw8dhCPd13UKSAGqy5DVPYAaAFSnuJtd5YGVJYl7v8=",
+  "Hash": "oksTsReEMcdl7loq05+LwbloCDud4SFWyThFyf2KUPM=",
   "Source": "AdoptPetProject",
   "BasePath": "_content/AdoptPetProject",
   "Mode": "Default",
@@ -508,6 +508,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/favicon.ico"
+    },
+    {
+      "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/images/flags/TgHelper.rar",
+      "SourceId": "AdoptPetProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/",
+      "BasePath": "_content/AdoptPetProject",
+      "RelativePath": "images/flags/TgHelper.rar",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/flags/TgHelper.rar"
     },
     {
       "Identity": "/Users/burakaydin/Projects/AdoptPetProject/AdoptPetProject/wwwroot/images/flags/trflag.png",

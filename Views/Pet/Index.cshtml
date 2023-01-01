@@ -141,7 +141,8 @@
                             <div class="spacer"></div>
 
                             <p>
-                                <input type="submit" name="submit_job" class="btn btn-primary" value="@language.Getkey("createlisting")  &rarr;" />
+                                @Html.AntiForgeryToken();
+                                <input type="submit" name="submit_job" class="btn btn-primary" value="@language.Getkey("createlisting")  &rarr;"/>
                             </p>
                         }
                         else

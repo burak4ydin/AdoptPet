@@ -37,7 +37,7 @@ namespace AdoptPetProject.Controllers
         }
 
         
-
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public IActionResult Index(string name,int age,string location,int catId,string description, IFormFile image)
         {
